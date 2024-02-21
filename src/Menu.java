@@ -91,7 +91,31 @@ class Menu {
                 }
                 break;
             case 4:
-                selectedDoll.pullOut(selectedDoll);
+                System.out.println("from where?");
+                int takeOff = scanner.nextInt();
+                RussianDoll from = null;
+                switch (takeOff) {
+                    case 1:
+                        from = doll1;
+                        break;
+                    case 2:
+                        from = doll2;
+                        break;
+                    case 3:
+                        from = doll3;
+                        break;
+                    case 4:
+                        from = doll4;
+                        break;
+                    default:
+                        System.out.println("Invalid target doll choice");
+                        break;
+                }
+
+                if (from != null) {
+                    selectedDoll.pullOut(from);
+
+                }
                 break;
             default:
                 System.out.println("Invalid operation choice");
